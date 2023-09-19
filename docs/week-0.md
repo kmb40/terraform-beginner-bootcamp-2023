@@ -26,3 +26,22 @@ Resolution
 - To see all environmental varibles, use `env`.
 - To see all environmentals associated with "ABC", use `env | grep ABC`.
 - To view an environmental variable, use `echo $yourenvvarhere` e.g. echo $PROJECT_ROOT.
+
+#### AWS CLI - Installtion
+**Objective:** Install AWS CLI.
+1. Created script [`install_aws_cli`](/bin/install_aws_cli).
+2. Create an AWS account (If required).
+
+- Check whether aws cli is installed by running:
+```sh
+aws sts get-caller-identity
+```
+
+If this command is succesful, the following data structure should appear(x's used to conceal actual data):
+```
+{
+    "UserId": "AIDA2WELSIAB32VXXXXXXX,
+    "Account": "XXXXX2107779",
+    "Arn": "arn:aws:iam::734732107779:user/<username here>"
+}
+```
