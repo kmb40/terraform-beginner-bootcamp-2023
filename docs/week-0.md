@@ -45,3 +45,4 @@ If this command is succesful, the following data structure should appear(x's use
     "Arn": "arn:aws:iam::734732107779:user/<username here>"
 }
 ```
+Updated Github Issue to reflect.
