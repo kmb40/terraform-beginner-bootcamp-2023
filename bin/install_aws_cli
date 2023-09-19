@@ -1,3 +1,4 @@
+# AWS CLI Script
 #!/usr/bin/env bash
 
 cd /workspace
