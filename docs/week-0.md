@@ -18,26 +18,30 @@ Resolution
 
 #### Set Environmental Variables
 **Objective:** Set environmental variables.
-1. Created documentation for enviromental variables at `.env.example`
-2. Set instance enviromental variable for the workspace using `export PROJECT_ROOT=workspace/terraform-beginner-bootcamp-2023`.
-3. Set permananet enviromental variable for the workspace using `gp env PROJECT_ROOT=workspace/terraform-beginner-bootcamp-2023`.
-4. Updated script to call enviromental variable for the path at [./bin/install_terraform_cli](https://github.com/kmb40/terraform-beginner-bootcamp-2023/commit/c3f91b5859b0f9a9155bee648c1b3d6bc3464f92).
+1. Created documentation for environmental variables at `.env.example`
+2. Set instance environmental variable for the workspace using `export PROJECT_ROOT=workspace/terraform-beginner-bootcamp-2023`.
+3. Set permanent environmental variable for the workspace using `gp env PROJECT_ROOT=workspace/terraform-beginner-bootcamp-2023`.
+4. Updated script to call environmental variable for the path at [./bin/install_terraform_cli](https://github.com/kmb40/terraform-beginner-bootcamp-2023/commit/c3f91b5859b0f9a9155bee648c1b3d6bc3464f92).
 
-- To see all environmental varibles, use `env`.
-- To see all environmentals associated with "ABC", use `env | grep ABC`.
+- To see all environmental variables, use `env`.
+- To see all environmental associated with "ABC", use `env | grep ABC`.
 - To view an environmental variable, use `echo $yourenvvarhere` e.g. echo $PROJECT_ROOT.
 
 #### AWS CLI - Installtion
 **Objective:** Install AWS CLI.
-1. Created script [`install_aws_cli`](/bin/install_aws_cli).
-2. Create an AWS account (If required).
+Problem
+- AWS cli installation pauses and requests user feedback when existing AWS CLI files are found.
 
-- Check whether aws cli is installed by running:
+Resolution
+1. Created script [`install_aws_cli`](/bin/install_aws_cli).
+**Note:** You may need to create an AWS account (If required).
+
+2. Check whether aws cli is installed by running:
 ```sh
 aws sts get-caller-identity
 ```
 
-If this command is succesful, the following data structure should appear(x's used to conceal actual data):
+If this command is successful, the following data structure should appear(x's used to conceal actual data):
 ```
 {
     "UserId": "AIDA2WELSIAB32VXXXXXXX,
@@ -45,4 +49,4 @@ If this command is succesful, the following data structure should appear(x's use
     "Arn": "arn:aws:iam::734732107779:user/<username here>"
 }
 ```
-Updated Github Issue to reflect.
+3. Launch the Gitpod workspace to test that the AWS CLI loads without interuption. 
