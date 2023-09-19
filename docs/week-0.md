@@ -49,4 +49,38 @@ If this command is successful, the following data structure should appear(x's us
     "Arn": "arn:aws:iam::734732107779:user/<username here>"
 }
 ```
-3. Launch the Gitpod workspace to test that the AWS CLI loads without interuption. 
+3. Launch the Gitpod workspace to test that the AWS CLI loads without interruption.
+
+### Terraform - Random Provider Init, Plan, Apply
+**Objective:** Run init and set up a provider.    
+
+####  Installed the Terraform random provider module. [Ref](https://registry.terraform.io/providers/hashicorp/random/latest/docs)
+1. Updated existing `main.tf` with the following (obtained from the "use provider" dropdown):
+```
+terraform {
+  required_providers {
+    random = {
+      source = "hashicorp/random"
+      version = "3.5.1"
+    }
+  }
+}
+
+provider "random" {
+  # Configuration options
+}
+```
+**Note:** This file is now considered a root-level module.
+**Note:** Updated (git ignore)[/.gitignore] file to prevent files from being pushed to github.   
+
+2. Ran the terraform init command with `terraform init`.
+    - This command initializes the directory and pulls down providers.
+3. Ran the terraform plan command with `terraform plan`.
+    - This will generate a changeset, about the state of your infrastructure and what will be changed.
+4. Ran the terraform approve command with `terraform apply --auto--approve`.
+    - **Note:** `--auto--approve` automates the prompt for a Yes or No approval at the command prompt.
+5. A random bucket and name should have been generated.
+
+Resources:   
+- Terraform Modules (collection of templates of terraform code, like a plugin) and Providers (integrated service providers).
+    - https://registry.terraform.io/ 
