@@ -71,7 +71,7 @@ provider "random" {
 }
 ```
 **Note:** This file is now considered a root-level module.
-**Note:** Updated (git ignore)[/.gitignore] file to prevent files from being pushed to github.   
+**Note:** Confirm that the (git ignore)[/.gitignore] file is updated to prevent files from being pushed to github.   
 
 2. Ran the terraform init command with `terraform init`.
     - This command initializes the directory and pulls down providers.
@@ -79,7 +79,7 @@ provider "random" {
     - This will generate a changeset, about the state of your infrastructure and what will be changed.
 4. Ran the terraform approve command with `terraform apply --auto--approve`.
     - **Note:** `--auto--approve` automates the prompt for a Yes or No approval at the command prompt.
-5. A random bucket and name should have been generated.
+5. A random bucket name should have been generated.
 
 Resources:   
 - Terraform Modules (collection of templates of terraform code, like a plugin) and Providers (integrated service providers).
