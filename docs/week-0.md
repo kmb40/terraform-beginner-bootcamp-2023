@@ -179,6 +179,7 @@ i. Run `terraform init`.
 j. Run `terraform apply --auto--approve`
 
 ### Terraform Login Bashscript
+**Objective:** Configure Gitpod to login to Terraform Cloud automatically.   
 1. Generate an API token at TF - https://app.terraform.io/app/settings/tokens.
 2. Create file `/bin/generate_tfrc_credentials` [Ref](/bin/generate_tfrc_credentials). Be sure to set permissions with `chmod u+x`.      
 3. Set environmental variables for "TERRAFORM_CLOUD_TOKEN" for the API token in Gitpod (if applicable) using `export` and `gp env`.   
@@ -187,3 +188,12 @@ j. Run `terraform apply --auto--approve`
 6. Run `terraform init` to confirm there are no errors.
 7. Add `source ./bin/generate_tfrc_credentials` to the existing `gitpod.yml`.   
 8. This task should be completed.   
+
+### Terraform Alias  
+**Objective:** Configure Terraform alias in Gitpod to shorten commands syntax. 
+
+1. Launch Gitpod.   
+2. Enter the following `open ~/.bash_profile`.   
+3. A file named ".bash_profile /home/gitpod" should open in Gitpod. Append `alias tf="terraform"` to that file.
+4. Create a new bash script name (`/bin/set_tf_alias`)[/bin/set_tf_alias] to set the new alias on future launches. And set permissions.
+5. Update the gitpod.yml file for both terraform and aws with `source ./bin/set_tf_alias`.   
