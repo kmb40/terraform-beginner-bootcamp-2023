@@ -197,3 +197,5 @@ j. Run `terraform apply --auto--approve`
 3. A file named ".bash_profile /home/gitpod" should open in Gitpod. Append `alias tf="terraform"` to that file.
 4. Create a new bash script name (`/bin/set_tf_alias`)[/bin/set_tf_alias] to set the new alias on future launches. And set permissions.
 5. Update the gitpod.yml file for both terraform and aws with `source ./bin/set_tf_alias`.   
+6. Commit changes and restart the Gitpod workspace to apply.
+7. Run `tf` and the command line to test. If usage information is returned then the task is completed.
