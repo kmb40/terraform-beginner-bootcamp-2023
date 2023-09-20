@@ -131,9 +131,9 @@ resource "aws_s3_bucket" "example" {
 * Projects are a collection of Workspaces.
 
 1. Launch Gitpod workspace.
-2. To return to the previous state, run `terraform init` then run `terraform apply --auto--approve`.
+2. To return to the previous state, run `terraform init` and then run `terraform apply --auto--approve`.
 3. Launch Terraform at https://app.terraform.io/app/.
-4. As a first time user, creating a new project is necessary.
+4. As a first-time user, creating a new project is necessary.
 5. Create a CLI workspace.
 6. After the CLI workspace has been created, copy and append the example code provided which should look like the following:
 ```
@@ -176,6 +176,7 @@ h. Add the following to the file:
 }
 ```
 i. Run `terraform init`.   
+**Note:** If you are curious and ran `terraform plan`, you may have gotten an error related to AWS credentials. If so it may be due to missing environmental variables at Terraform. A solution to this would be to visit https://app.terraform.io/app/mayvik/workspaces/Terra-House/settings/general and set the "Default Execution Mode" to "local" instead of "remote".   
 j. Run `terraform apply --auto--approve`
 
 ### Terraform Login Bashscript
@@ -183,7 +184,7 @@ j. Run `terraform apply --auto--approve`
 1. Generate an API token at TF - https://app.terraform.io/app/settings/tokens.
 2. Create file `/bin/generate_tfrc_credentials` [Ref](/bin/generate_tfrc_credentials). Be sure to set permissions with `chmod u+x`.      
 3. Set environmental variables for "TERRAFORM_CLOUD_TOKEN" for the API token in Gitpod (if applicable) using `export` and `gp env`.   
-4. Test success of script by running `./bin/generate_tfrc_credentials`.   
+4. Test the success of the script by running `./bin/generate_tfrc_credentials`.   
 5. Verify the results by running `cat /home/gitpod/.terraform.d/credentials.tfrc.json` to view the file.
 6. Run `terraform init` to confirm there are no errors.
 7. Add `source ./bin/generate_tfrc_credentials` to the existing `gitpod.yml`.   
