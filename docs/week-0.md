@@ -160,12 +160,12 @@ b. Press "p" for print and a new screen should appear as shown in Fig. TerraForm
 <figcaption>TerraForm Login Print</figcaption>   
 <br/><br/>
 
-c. Click+CMD on the url to the right of "Document:" and you should be taken to the terraform workspace and presented with a token lifetime popup. 
-d. Select, then create the token.
-e. Press 'q' to leave that screen.
-f. Create a file by running `touch /home/gitpod/.terraform.d/credentials.tfrc.json`.
-g. Run `open /home/gitpod/.terraform.d/credentials.tfrc.json` to open the file.
-h. Add the following to the file:
+c. Click+CMD on the url to the right of "Document:" and you should be taken to the terraform workspace and presented with a token lifetime popup.   
+d. Select, then create the token.   
+e. Press 'q' to leave that screen.   
+f. Create a file by running `touch /home/gitpod/.terraform.d/credentials.tfrc.json`.   
+g. Run `open /home/gitpod/.terraform.d/credentials.tfrc.json` to open the file.   
+h. Add the following to the file:   
 ```
 {
     "credentials":{
