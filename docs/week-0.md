@@ -151,12 +151,12 @@ terraform {
 7. Run `terraform login`.
 **Note:** If using Gitpod, you may be promted to read and approve. If you are working locally you may not have this experience that is noted.
 a. Then presented with a screen as seen in Fig. TerraForm Login Result.   
-<img src="/assets/#" width=450>
+<img src="/assets/terra-login-2023-09-20_11-26-15.png" width=450>
 <figcaption>TerraForm Login Result</figcaption>   
 <br/><br/>
 
 b. Press "p" for print and a new screen should appear as shown in Fig. TerraForm Login Print. Alternatively, you can visit https://app.terraform.io/app/settings/tokens?source=terraform-login
-<img src="/assets/#" width=450>
+<img src="/assets/terra-login-2023-09-20_11-26-15.png" width=450>
 <figcaption>TerraForm Login Print</figcaption>   
 <br/><br/>
 
