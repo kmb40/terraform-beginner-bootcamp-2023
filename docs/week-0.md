@@ -185,4 +185,5 @@ j. Run `terraform apply --auto--approve`
 4. Test success of script by running `./bin/generate_tfrc_credentials`.   
 5. Verify the results by running `cat /home/gitpod/.terraform.d/credentials.tfrc.json` to view the file.
 6. Run `terraform init` to confirm there are no errors.
-7. Add `` to the existing `gitpod.yml`.
+7. Add `source ./bin/generate_tfrc_credentials` to the existing `gitpod.yml`.   
+8. This task should be completed.   
