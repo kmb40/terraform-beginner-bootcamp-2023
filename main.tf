@@ -1,6 +1,13 @@
 # Terraform Module - Random 
 
 terraform {
+  cloud {
+     organization = "mayvik"
+ 
+     workspaces {
+       name = "Terra-House"
+     }
+   }  
   required_providers {
     random = {
       source = "hashicorp/random"

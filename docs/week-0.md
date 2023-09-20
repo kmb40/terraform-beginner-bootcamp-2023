@@ -124,8 +124,56 @@ resource "aws_s3_bucket" "example" {
 7. Run `terraform destroy` to remove the s3 bucket.
 
 ### Terraform Backend Config
-**Objective:** Configur Terraform Cloud.
+**Objective:** Configure Terraform Cloud.
 
 **Note**
 * Workspaces contain configurations, settings, and infrastructure state.
 * Projects are a collection of Workspaces.
+
+1. Launch Gitpod workspace.
+2. To return to the previous state, run `terraform init` then run `terraform apply --auto--approve`.
+3. Launch Terraform at https://app.terraform.io/app/.
+4. As a first time user, creating a new project is necessary.
+5. Create a CLI workspace.
+6. After the CLI workspace has been created, copy and append the example code provided which should look like the following:
+```
+terraform {
+  cloud {
+    organization = "<your org here>"
+
+    workspaces {
+      name = "Terra-House"
+    }
+  }
+  # existing content here if applicable
+}
+```
+7. Run `terraform login`.
+**Note:** If using Gitpod, you may be promted to read and approve. If you are working locally you may not have this experience that is noted.
+a. Then presented with a screen as seen in Fig. TerraForm Login Result.   
+<img src="/assets/#" width=450>
+<figcaption>TerraForm Login Result</figcaption>   
+<br/><br/>
+
+b. Press "p" for print and a new screen should appear as shown in Fig. TerraForm Login Print. Alternatively, you can visit https://app.terraform.io/app/settings/tokens?source=terraform-login
+<img src="/assets/#" width=450>
+<figcaption>TerraForm Login Print</figcaption>   
+<br/><br/>
+
+c. Click+CMD on the url to the right of "Document:" and you should be taken to the terraform workspace and presented with a token lifetime popup. 
+d. Select, then create the token.
+e. Press 'q' to leave that screen.
+f. Create a file by running `touch /home/gitpod/.terraform.d/credentials.tfrc.json`.
+g. Run `open /home/gitpod/.terraform.d/credentials.tfrc.json` to open the file.
+h. Add the following to the file:
+```
+{
+    "credentials":{
+        "app.terraform.io":{
+            "token": "<your token here>"
+        }
+    }
+}
+```
+i. Run `terraform init`.
+j. Run `terraform apply --auto--approve`
