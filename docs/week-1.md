@@ -13,8 +13,8 @@ PROJECT_ROOT
 
 ```
 **Note:** In the event that changes are made in the wrong branch outside of github, do the following:
-- [ ] `git fecth` to grab current branch
-- [ ] `git checkout <desired branch>` - to pull desired branch where changes should go
+- [ ] `git fetch` to grab current branch
+- [ ] `git checkout <desired branch>` - to pull the desired branch where changes should go
 - [ ] `git merge <incorrect branch>` merges the desired and incorrect branches together. Conflict resolution may be required.
 
 [Standard Module Structure](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
@@ -31,7 +31,7 @@ Variables Types:
 1. Environment Variables - those you would set in your bash terminal eg. AWS credentials   
 2. Terraform Variables - those that you would normally set in your tfvars file   
 
-**Note:** Terraform Cloud variables can be set to be "sensitive" so they are not shown visibliy in the UI.   
+**Note:** Terraform Cloud variables can be set to be "sensitive" so they are not shown visiblity in the UI.   
 
 ### Loading Terraform Input Variables
 
