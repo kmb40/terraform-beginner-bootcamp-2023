@@ -16,5 +16,17 @@
 3. Launch with `http-server`.
 4. Used Aws Cli to upload the static web page to S3 bucket.
 5. Create a CloudFront Distribution.
-6. Create origin access control setting.
+6. Create an origin access control setting.
 **Note:** This needs to be done during the CloudFront distribution setup
+## Structure
+```
+PROJECT_ROOT
+│
+├── main.tf                 # everything else.
+├── variables.tf            # stores the structure of input variables
+├── terraform.tfvars        # the data of variables we want to load into our terraform project
+├── providers.tf            # defined required providers and their configuration
+├── outputs.tf              # stores our outputs
+└── README.md               # required for root modules
+
+```
