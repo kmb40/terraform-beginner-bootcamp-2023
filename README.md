@@ -5,5 +5,6 @@ The objective is outlined at [TerraForm Bootcamp Outline](https://docs.google.co
 <img src="/assets/268042721-ab015431-2d14-4910-aa37-be4807b2b905.png">
 
 ## Contents
+
 * [Week 0](/docs/week-0.md)
 * [Week 1](/docs/week-1.md)
