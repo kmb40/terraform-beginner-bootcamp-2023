@@ -58,3 +58,19 @@ This is the default file to load in terraform variables.
 5. Create a CloudFront Distribution.
 6. Create an origin access control setting.
 **Note:** This needs to be done during the CloudFront distribution setup
+
+## Configuration Drift
+
+## What happens if we lose our state file?
+If a statefile is lost, you most likley have to tear down all your cloud infrastructure manually.
+You can use terraform import but it won't work for all cloud resources. You need check the terraform providers documentation for which resources support import.
+
+### Fix Missing Resources with Terraform Import
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
+[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
+
+### Fix Manual Configuration
+If a cloud resource is manually modified or deleted through ClickOps. 
+If we run Terraform plan is with attempt to put our infrastructure back into the expected state fixing Configuration Drift.
