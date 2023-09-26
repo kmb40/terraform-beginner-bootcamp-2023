@@ -42,6 +42,53 @@ Variables Types:
 ### terraform.tvfars
 This is the default file to load in terraform variables.  
 
+## Configuration Drift
+
+## What happens if we lose our state file?
+* If a statefile is lost, you most likley have to tear down all your cloud infrastructure manually.
+* `terraform import` won't work for all cloud resources. You need check the terraform providers documentation for which resources support import.
+
+### Fix Missing Resources with Terraform Import
+`terraform import aws_s3_bucket.bucket bucket-name`
+
+[Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
+[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
+
+### Fix Manual Configuration
+* If a cloud resource is manually modified or deleted through ClickOps. 
+* `Terraform plan` should put our infrastructure back into the expected state, fixing the Configuration Drift.
+
+## Terraform Modules
+### Terraform Module Structure
+It is recommend to place modules in a `modules` directory when locally developing modules but you can name it whatever you like.
+
+### Passing Input Variables
+**Note:** Variables should be present in both the top level `variables.tf` and the `module/terrahouse_aws`
+* Variables can be passed into the module.
+* The module has to declare the terraform variables in its own `variables.tf` as follows:
+
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+  user_uuid = var.user_uuid
+  bucket_name = var.bucket_name
+}
+```
+
+### Modules Sources
+Using the source we can import the module from various places eg:
+- locally
+- Github
+- Terraform Registry
+
+```tf
+module "terrahouse_aws" {
+  source = "./modules/terrahouse_aws"
+}
+```
+[Modules Sources](https://developer.hashicorp.com/terraform/language/modules/sources)
+
+
 ## Misc
 ### FYI
 1. https://terratowns.cloud/ has been launched.
@@ -58,19 +105,3 @@ This is the default file to load in terraform variables.
 5. Create a CloudFront Distribution.
 6. Create an origin access control setting.
 **Note:** This needs to be done during the CloudFront distribution setup
-
-## Configuration Drift
-
-## What happens if we lose our state file?
-If a statefile is lost, you most likley have to tear down all your cloud infrastructure manually.
-You can use terraform import but it won't work for all cloud resources. You need check the terraform providers documentation for which resources support import.
-
-### Fix Missing Resources with Terraform Import
-`terraform import aws_s3_bucket.bucket bucket-name`
-
-[Terraform Import](https://developer.hashicorp.com/terraform/cli/import)
-[AWS S3 Bucket Import](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#import)
-
-### Fix Manual Configuration
-If a cloud resource is manually modified or deleted through ClickOps. 
-If we run Terraform plan is with attempt to put our infrastructure back into the expected state fixing Configuration Drift.
