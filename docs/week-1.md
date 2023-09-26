@@ -164,5 +164,3 @@ JSON encode can be used to create the JSON policy inline in the hcl.
 5. Create a CloudFront Distribution.
 6. Create an origin access control setting.
 **Note:** This needs to be done during the CloudFront distribution setup
-
-Testing Changes
