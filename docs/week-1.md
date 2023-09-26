@@ -88,6 +88,31 @@ module "terrahouse_aws" {
 ```
 [Modules Sources](https://developer.hashicorp.com/terraform/language/modules/sources)
 
+## Working with Files in Terraform
+**Note:** During `tf plan` in Gitpod, I encountered a path not found error for both public/index.html and public/error.html. I corrected this issue by shortening the path in `terraform.tfvars` from `index_html_filepath="/workspace/terraform-beginner-bootcamp-2023/public/index.html"` to `index_html_filepath="public/index.html"`. After which I was able to init, plan, and apply successfully.   
+
+### Fileexists function
+This is a built-in terraform function to check the existence of a file.
+```tf
+condition = fileexists(var.error_html_filepath)
+```
+
+https://developer.hashicorp.com/terraform/language/functions/fileexists
+
+### Filemd5
+https://developer.hashicorp.com/terraform/language/functions/filemd5
+
+### Path Variable
+In terraform there is a special variable called `path` that allows us to reference local paths:
+- path.module = get the path for the current module
+- path.root = get the path for the root module
+[Special Path Variable](https://developer.hashicorp.com/terraform/language/expressions/references#filesystem-and-workspace-info)
+
+resource "aws_s3_object" "index_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "index.html"
+  source = "${path.root}/public/index.html"
+}
 
 ## Misc
 ### FYI
