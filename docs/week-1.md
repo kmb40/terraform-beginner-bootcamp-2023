@@ -203,6 +203,9 @@ resource "aws_instance" "web" {
 ```
 https://developer.hashicorp.com/terraform/language/resources/provisioners/remote-exec
 
+## Terraform Console
+1. Reach the Terraform Console with `terraform console`.
+
 ## For Each Expression
 For each allows us to enumerate complex data types
 
