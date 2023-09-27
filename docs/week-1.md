@@ -217,6 +217,8 @@ Useful when creating multiples of a cloud resource and you want to reduce the am
 
 [For Each Expressions](https://developer.hashicorp.com/terraform/language/expressions/for)
 
+**Note:** When engaging the ExampPro Platform validation tool - when it comes to permission, be sure to tear down any existing CloudFormation stacks, and Build a new stack using the provided AWS CLI commands provided. Failure to do so may result in multiple failures even if all elements of the infrastructure are correct.
+
 ## Misc
 ### FYI
 1. https://terratowns.cloud/ has been launched.
