@@ -1,6 +1,23 @@
 # Terraform Beginner Bootcamp 2023 - Week 2
 
-**Objective:** 
+**Objective:** Download, Install, and configure a mock web server.
+
+## Download mock web server.
+1. Clone repo located at https://github.com/ExamProCo/terratowns_mock_server using the `HTTPS` option.
+2. Run `git clone git@github.com:ExamProCo/terratowns_mock_server.git`.
+4. That should creatre a new directory named `terratowns_mock_server`.`cd` into the terratowns_mock_server directory.
+5. From that direcotry, remove the `.git` direcotry using `rm -rf .git`.
+**Note:** The command line will show the branch as `main`. This is the main branch of the terratowns_mock_server repo that was cloned in step #2 and NOT the `main` branch of the terraform-beginner-bootcamp-2023. 
+6. Visit `terratowns_mock_server/gitpod.yml` and cut all of the content minus `tasks:` and pasted it into the top-level `gitpod.yml` file.
+7. Add `cd terratowns_mock_server` above `bundle install` and change `init` to `before`. The code snippet that is being pasted, should look like the following:
+```
+  - name: sinatra
+    before: | 
+      cd terratowns_mock_server
+      bundle install
+      bundle exec ruby server.rb 
+```
+8. Delete the `terratowns_mock_server/gitpod.yml` file.
 
 ## Working with Ruby
 ### Bundler
