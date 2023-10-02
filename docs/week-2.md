@@ -1,6 +1,7 @@
 # Terraform Beginner Bootcamp 2023 - Week 2
 
 **Objective:** Download, Install, and configure a mock web server. Create a custom TerraForm provider.
+**Objective:** Download, Install, and configure a mock web server. Create a custom TerraForm provider.
 
 ## Download mock web server.
 1. Clone repo located at https://github.com/ExamProCo/terratowns_mock_server using the `HTTPS` option.
@@ -60,6 +61,7 @@ bundle exec ruby server.rb
 ## Custom TerraForm Provider    
 ### Build a custom TerraForm provider for Terratowns Pt 1    
 # Lesson - https://www.youtube.com/watch?v=pU8-AOhrIV8    
+
 1. Create a new directory `terraform-provider-terratowns`.
 2. In that directory, build the [`main.go`](/terraform-provider-terratowns/main.go) file which is a special file in Go, it's where the execution of the program starts.
 3. **Important** In that directory, create a go.mod file by changing into the `terraform-provider-terratowns` directory and running, `go mod init terraform-provider-terratowns`.
@@ -134,3 +136,6 @@ require (
 2. Set env var with `export TF_LOG=DEBUG`.t
 3. Comment out all conents of `outputs.tf` in main directory.
 4. Run `tf init`.
+
+**Note:** A Go VSCode extension can be installed to color code the syntax but is not required. I used VSCode ID - golang.go
+
