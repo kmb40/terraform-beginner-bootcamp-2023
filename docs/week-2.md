@@ -125,3 +125,4 @@ require (
 7. Run `go build -o terraform-provider-terratowns_v1.0.0`.
 8. A 20.87mb binary named `terraform-provider-terratowns_v1.0.0` should be created and you should be returned to the prompt.
 9. Add the file to .gitignore to keep from sending it back to the Github repo by adding `terraform-provider-terratowns/terraform-provider-terratowns_v*`.
+**Note:** A Go VSCode extension can be installed to color code the syntax but is not required. I used VSCode ID - golang.go
