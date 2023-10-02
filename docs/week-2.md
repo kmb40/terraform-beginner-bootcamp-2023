@@ -130,12 +130,15 @@ require (
 8. A 20.87mb binary named `terraform-provider-terratowns_v1.0.0` should be created and you should be returned to the prompt.
 9. Add the file to .gitignore to keep from sending it back to the Github repo by adding `terraform-provider-terratowns/terraform-provider-terratowns_v*`.
 
+**Note:** A Go VSCode extension can be installed to color code the syntax but is not required. I used VSCode ID - golang.go
+
 ### Build a custom TerraForm provider for Terratowns Pt 2    
 # Lesson - https://www.youtube.com/watch?v=PivvxGseOwk    
-1. Update`gitpod.yml` with TF_LOG: Debug for extended log generation.
+1. Update`gitpod.yml` with TF_LOG: Debug for extended log generation while in the `terraform: bash` cli.
 2. Set env var with `export TF_LOG=DEBUG`.t
 3. Comment out all conents of `outputs.tf` in main directory.
 4. Run `tf init`.
 
-**Note:** A Go VSCode extension can be installed to color code the syntax but is not required. I used VSCode ID - golang.go
-
+### Build a custom TerraForm provider for Terratowns Pt 3  
+# Lesson - https://www.youtube.com/watch?v=_QBTP0SyGtQ   
+1. 
