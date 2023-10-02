@@ -142,3 +142,10 @@ require (
 ### Build a custom TerraForm provider for Terratowns Pt 3  
 # Lesson - https://www.youtube.com/watch?v=_QBTP0SyGtQ   
 1. 
+
+### Build a custom TerraForm provider for Terratowns Pt 2    
+# Lesson - https://www.youtube.com/watch?v=PivvxGseOwk    
+1. Update`gitpod.yml` with TF_LOG: Debug for extended log generation.
+2. Set env var with `export TF_LOG=DEBUG`.t
+3. Comment out all conents of `outputs.tf` in main directory.
+4. Run `tf init`.
