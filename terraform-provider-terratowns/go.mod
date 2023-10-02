@@ -1,3 +1,6 @@
+//module terraform-provider-terratowns
+//
+//go 1.21.1
 module github.com/ExamProCo/terraform-provider-terratowns
 
 go 1.20
