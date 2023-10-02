@@ -1,6 +1,6 @@
 # Terraform Beginner Bootcamp 2023 - Week 2
 
-**Objective:** Download, Install, and configure a mock web server.
+**Objective:** Download, Install, and configure a mock web server. Create a custom TerraForm provider.
 
 ## Download mock web server.
 1. Clone repo located at https://github.com/ExamProCo/terratowns_mock_server using the `HTTPS` option.
