@@ -57,7 +57,9 @@ bundle exec ruby server.rb
 
 **Note:** All of the code for the server is stored in the `server.rb` file.
 
-## Build a custom TerraForm provider for Terratowns
+## Custom TerraForm Provider    
+### Build a custom TerraForm provider for Terratowns Pt 1    
+# Lesson - https://www.youtube.com/watch?v=pU8-AOhrIV8    
 1. Create a new directory `terraform-provider-terratowns`.
 2. In that directory, build the [`main.go`](/terraform-provider-terratowns/main.go) file which is a special file in Go, it's where the execution of the program starts.
 3. **Important** In that directory, create a go.mod file by changing into the `terraform-provider-terratowns` directory and running, `go mod init terraform-provider-terratowns`.
@@ -125,3 +127,10 @@ require (
 7. Run `go build -o terraform-provider-terratowns_v1.0.0`.
 8. A 20.87mb binary named `terraform-provider-terratowns_v1.0.0` should be created and you should be returned to the prompt.
 9. Add the file to .gitignore to keep from sending it back to the Github repo by adding `terraform-provider-terratowns/terraform-provider-terratowns_v*`.
+
+### Build a custom TerraForm provider for Terratowns Pt 2    
+# Lesson - https://www.youtube.com/watch?v=PivvxGseOwk    
+1. Update`gitpod.yml` with TF_LOG: Debug for extended log generation.
+2. Set env var with `export TF_LOG=DEBUG`.t
+3. Comment out all conents of `outputs.tf` in main directory.
+4. Run `tf init`.
