@@ -59,7 +59,7 @@ bundle exec ruby server.rb
 **Note:** All of the code for the server is stored in the `server.rb` file.
 
 ## Custom TerraForm Provider    
-### Build a custom TerraForm provider for Terratowns Pt 1    
+### Build a custom TerraForm provider for Terratowns Pt 1 (Setup Skeleton)
 # Lesson - https://www.youtube.com/watch?v=pU8-AOhrIV8    
 
 1. Create a new directory `terraform-provider-terratowns`.
@@ -132,20 +132,20 @@ require (
 
 **Note:** A Go VSCode extension can be installed to color code the syntax but is not required. I used VSCode ID - golang.go
 
-### Build a custom TerraForm provider for Terratowns Pt 2    
+### Build a custom TerraForm provider for Terratowns Pt 2 (Custom Provider)
 # Lesson - https://www.youtube.com/watch?v=PivvxGseOwk    
 1. Update`gitpod.yml` with TF_LOG: Debug for extended log generation while in the `terraform: bash` cli.
 2. Set env var with `export TF_LOG=DEBUG`.t
 3. Comment out all conents of `outputs.tf` in main directory.
 4. Run `tf init`.
+5. See [commit](https://github.com/kmb40/terraform-beginner-bootcamp-2023/commit/858f0c7285f4e59755605820884c71a65f2ebd7e) here.
 
-### Build a custom TerraForm provider for Terratowns Pt 3  
+### Build a custom TerraForm provider for Terratowns Pt 3  (Resource Skeleton)
 # Lesson - https://www.youtube.com/watch?v=_QBTP0SyGtQ   
-1. 
+1. tbd
 
-### Build a custom TerraForm provider for Terratowns Pt 2    
-# Lesson - https://www.youtube.com/watch?v=PivvxGseOwk    
-1. Update`gitpod.yml` with TF_LOG: Debug for extended log generation.
-2. Set env var with `export TF_LOG=DEBUG`.t
-3. Comment out all conents of `outputs.tf` in main directory.
-4. Run `tf init`.
+### Build a custom TerraForm provider for Terratowns Pt 4 (CRUD)
+# Lesson - https://www.youtube.com/watch?v=aeJCV-VIWiw  
+1. Made substantial updates to [`main.tf`](#) AND [`/terraform-provider-terratowns/main.go`]() to reflect inidvidual terratown website.
+2. Built provider using `build_provider` bash script.
+3. Tested on local sinatra server.
