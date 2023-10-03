@@ -133,6 +133,7 @@ require (
 **Note:** A Go VSCode extension can be installed to color code the syntax but is not required. I used VSCode ID - golang.go
 
 ### Build a custom TerraForm provider for Terratowns Pt 2 (Custom Provider)
+
 # Lesson - https://www.youtube.com/watch?v=PivvxGseOwk    
 1. Update`gitpod.yml` with TF_LOG: Debug for extended log generation while in the `terraform: bash` cli.
 2. Set env var with `export TF_LOG=DEBUG`.t
