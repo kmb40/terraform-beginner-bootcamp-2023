@@ -8,15 +8,15 @@
 2. Run `git clone git@github.com:ExamProCo/terratowns_mock_server.git`.
 4. That should creatre a new directory named `terratowns_mock_server`.`cd` into the terratowns_mock_server directory.
 5. From that direcotry, remove the `.git` direcotry using `rm -rf .git`.
-**Note:** The command line will show the branch as `main`. This is the main branch of the terratowns_mock_server repo that was cloned in step #2 and NOT the `main` branch of the terraform-beginner-bootcamp-2023. 
+**Note:** The command line will show the branch as `main`. This is the main branch of the terratowns_mock_server repo that was cloned in step #2 and NOT the `main` branch of the terraform-beginner-bootcamp-2023.
 6. Visit `terratowns_mock_server/gitpod.yml` and cut all of the content minus `tasks:` and pasted it into the top-level `gitpod.yml` file.
 7. Add `cd terratowns_mock_server` above `bundle install` and change `init` to `before`. The code snippet that is being pasted, should look like the following:
 ```
   - name: sinatra
-    before: | 
+    before: |
       cd terratowns_mock_server
       bundle install
-      bundle exec ruby server.rb 
+      bundle exec ruby server.rb
 ```
 8. Delete the `terratowns_mock_server/gitpod.yml` file.
 
@@ -40,7 +40,7 @@ gem 'activerecord'
 A Gemfile.lock should be created to lock down the gem versions used in this project.
 
 #### Executing ruby scripts in the context of bundler
-Run the `bundle exec` command to tell future ruby scripts to use the gems that you installed.  
+Run the `bundle exec` command to tell future ruby scripts to use the gems that you installed.
 
 ### Sinatra
 Sinatra is a micro web-framework for ruby to build web-apps. Its great for mock or development servers or for very simple projects.
@@ -58,9 +58,9 @@ bundle exec ruby server.rb
 
 **Note:** All of the code for the server is stored in the `server.rb` file.
 
-## Custom TerraForm Provider    
+## Custom TerraForm Provider
 ### Build a custom TerraForm provider for Terratowns Pt 1 (Setup Skeleton)
-**Lesson - https://www.youtube.com/watch?v=pU8-AOhrIV8**    
+**Lesson - https://www.youtube.com/watch?v=pU8-AOhrIV8**
 
 1. Create a new directory `terraform-provider-terratowns`.
 2. In that directory, build the [`main.go`](/terraform-provider-terratowns/main.go) file which is a special file in Go, it's where the execution of the program starts.
@@ -134,7 +134,7 @@ require (
 
 ### Build a custom TerraForm provider for Terratowns Pt 2 (Custom Provider)
 
-**Lesson - https://www.youtube.com/watch?v=PivvxGseOwk**    
+**Lesson - https://www.youtube.com/watch?v=PivvxGseOwk**
 1. Update`gitpod.yml` with TF_LOG: Debug for extended log generation while in the `terraform: bash` cli.
 2. Set env var with `export TF_LOG=DEBUG`.t
 3. Comment out all conents of `outputs.tf` in main directory.
@@ -142,11 +142,11 @@ require (
 5. See [commit](https://github.com/kmb40/terraform-beginner-bootcamp-2023/commit/858f0c7285f4e59755605820884c71a65f2ebd7e) here.
 
 ### Build a custom TerraForm provider for Terratowns Pt 3  (Resource Skeleton)
-**Lesson - https://www.youtube.com/watch?v=_QBTP0SyGtQ**   
+**Lesson - https://www.youtube.com/watch?v=_QBTP0SyGtQ**
 1. tbd
 
 ### Build a custom TerraForm provider for Terratowns Pt 4 (CRUD)
-**Lesson - https://www.youtube.com/watch?v=aeJCV-VIWiw**  
+**Lesson - https://www.youtube.com/watch?v=aeJCV-VIWiw**
 1. Made substantial updates to [`main.tf`](#) AND [`/terraform-provider-terratowns/main.go`]() to reflect individual terratown website.
 2. Built provider using `build_provider` bash script.
 3. Tested on local sinatra server.
@@ -156,8 +156,7 @@ require (
 1. Obtain teachers seat uuid and terratowns access key.
 2. After updating files and variables, run `./bin/build_provider`.
 3. Run `tf init`, run `tf apply`.
-4. Could take several minutes to deploy.     
-     
+4. Could take several minutes to deploy.
 **Issue**
 Received a request at the command line requesting a value for `bucket_name`.
 
@@ -168,13 +167,22 @@ variable "bucket_name" {
  type = string
 }
 ```
-This is consistent with removal from `modules/terrahouse_aws/variables.tf`.      
+This is consistent with removal from `modules/terrahouse_aws/variables.tf`.
 **Note:** When making changes to content in `main.tf` be sure to the `content_version`. e.g. increment by 1.
-5. Terraform successfully: 
+5. Terraform successfully:
 - built an S3 bucket
 - loaded site files into it
 - setup a CloudFront distribution
 - connected my TerraHouse to the TerraTowns site Missingo.
 6. Destroyed with `tf destroy`.
 
-<img src="/assets/terratowns-listing-2023-10-04_12-09-49.png" width="450">
+<img src="/assets/terratowns-listing-2023-10-04_12-09-49.png" alt="terratown-listing" width="450">
+
+## Setup Multi-Home TerraForm Cloud
+**Lesson - https://www.youtube.com/watch?v=PswO3Tf8HDs **
+1. Sign into Terraform [workspace](https://app.terraform.io/app) and set "General->Execution Mode" to "custom"->"local".
+2. Run `./bin/build_provider`.
+3. Run `tf init`.
+4. Run `tf apply`.
+5. Create an additional town and a directory mirroing the existing structure.
+**Note:** Preceeding `/` may need to be remvoed from the img src path. E.g `/assets/` to `assets/`

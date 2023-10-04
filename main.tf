@@ -23,12 +23,10 @@ provider "terratowns" {
   token = var.terratowns_access_token
 }
 
-module "terrahouse_aws" {
-  source = "./modules/terrahouse_aws"
+module "home_fitness_hosting" {
+  source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
-  index_html_filepath = var.index_html_filepath
-  error_html_filepath = var.error_html_filepath
-  assets_path = var.assets_path
+  public_path = var.fitness.public_path
   content_version = var.content_version
 }
 
@@ -37,8 +35,25 @@ resource "terratowns_home" "home" {
   description = <<DESCRIPTION
 Fitness is essential for quality, productive, long life! 
 DESCRIPTION
-  domain_name = module.terrahouse_aws.cloudfront_url
-  #domain_name = "3fdq3gz.cloudfront.net"
+  domain_name = module.home_fitness_hosting.domain_name
   town = "missingo"
   content_version = 3
+}
+
+module "home_bbq_hosting" {
+  source = "./modules/terrahome_aws"
+  user_uuid = var.teacherseat_user_uuid
+  public_path = var.bbq.public_path
+  content_version = var.content_version
+}
+
+resource "terratowns_home" "home" {
+  name = "Using a Smoker"
+  description = <<DESCRIPTION
+Smoked meats are incredible! 
+DESCRIPTION
+  domain_name = module.home_bbq_hosting.domain_name
+  #domain_name = "3fdq3gz.cloudfront.net"
+  town = "missingo"
+  content_version = 1
 }
