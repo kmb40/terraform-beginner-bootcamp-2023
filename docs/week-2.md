@@ -147,7 +147,7 @@ require (
 
 ### Build a custom TerraForm provider for Terratowns Pt 4 (CRUD)
 **Lesson - https://www.youtube.com/watch?v=aeJCV-VIWiw**  
-1. Made substantial updates to [`main.tf`](#) AND [`/terraform-provider-terratowns/main.go`]() to reflect inidvidual terratown website.
+1. Made substantial updates to [`main.tf`](#) AND [`/terraform-provider-terratowns/main.go`]() to reflect individual terratown website.
 2. Built provider using `build_provider` bash script.
 3. Tested on local sinatra server.
 
@@ -176,3 +176,5 @@ This is consistent with removal from `modules/terrahouse_aws/variables.tf`.
 - setup a CloudFront distribution
 - connected my TerraHouse to the TerraTowns site Missingo.
 6. Destroyed with `tf destroy`.
+
+<img src="/assets/terratowns-listing-2023-10-04_12-09-49.png" width="450">
