@@ -15,6 +15,12 @@ terraform {
 #    UserUuid = var.user_uuid
 #  }
 #}
+  cloud {
+    organization = "mayvik"
+    workspaces {
+      name = "terra-house"
+    }
+  }
 }
 
 provider "terratowns" {
