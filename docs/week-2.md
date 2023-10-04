@@ -152,4 +152,21 @@ require (
 3. Tested on local sinatra server.
 
 ### TerraTowns Test
+**Lesson - https://www.youtube.com/watch?v=fPYHmiM9r6Y**
 1. Obtain teachers seat uuid and terratowns access key.
+2. After updating files and variables, run `./bin/build_provider`.
+3. Run `tf init`, run `tf apply`.
+4. Could take several minutes to deploy.
+**Issue**
+Received a request at the command line requesting a value for `bucket_name`.
+
+**Resolution**
+Removed the following from `variables.tf` in root:
+```
+variable "bucket_name" {
+ type = string
+}
+```
+This is consistent with removal from `modules/terrahouse_aws/variables.tf`
+**Note:** WHen making changes to content in `main.tf` be sure to the `content_version`. e.g. increment by 1.
+
