@@ -27,7 +27,7 @@ module "home_fitness_hosting" {
   source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
   public_path = var.fitness.public_path
-  content_version = var.content_version
+  content_version = var.fitness.content_version
 }
 
 resource "terratowns_home" "home" {
@@ -37,17 +37,17 @@ Fitness is essential for quality, productive, long life!
 DESCRIPTION
   domain_name = module.home_fitness_hosting.domain_name
   town = "missingo"
-  content_version = 3
+  content_version = var.fitness.content_version
 }
 
 module "home_bbq_hosting" {
   source = "./modules/terrahome_aws"
   user_uuid = var.teacherseat_user_uuid
   public_path = var.bbq.public_path
-  content_version = var.content_version
+  content_version = var.bbq.content_version
 }
 
-resource "terratowns_home" "home" {
+resource "terratowns_home" "bbq" {
   name = "Using a Smoker"
   description = <<DESCRIPTION
 Smoked meats are incredible! 
@@ -55,5 +55,5 @@ DESCRIPTION
   domain_name = module.home_bbq_hosting.domain_name
   #domain_name = "3fdq3gz.cloudfront.net"
   town = "missingo"
-  content_version = 1
+  content_version = var.bbq.content_version
 }
