@@ -11,7 +11,7 @@ variable "teacherseat_user_uuid" {
 }
 
 variable "content_version" {
-  type        = number
+  type = number
 }
 
 variable "fitness" {

@@ -18,7 +18,7 @@ terraform {
   cloud {
     organization = "mayvik"
     workspaces {
-      name = "terra-house"
+      name = "Terra-House"
     }
   }
 }
