@@ -153,6 +153,7 @@ require (
 
 ## TerraTowns Test
 **Lesson - https://www.youtube.com/watch?v=fPYHmiM9r6Y**
+**Note:** Extensive troubleshooting was demonstarted and required so conent is limited. Observe video for specifics.   
 1. Obtain teachers seat uuid and terratowns access key.
 2. After updating files and variables, run `./bin/build_provider`.
 3. Run `tf init`, run `tf apply`.
@@ -180,9 +181,65 @@ This is consistent with removal from `modules/terrahouse_aws/variables.tf`.
 
 ## Setup Multi-Home TerraForm Cloud
 **Lesson - https://www.youtube.com/watch?v=PswO3Tf8HDs **
+**Note:** Extensive troubleshooting was demonstarted and required so conent is limited. Observe video for specifics. 
 1. Sign into Terraform [workspace](https://app.terraform.io/app) and set "General->Execution Mode" to "custom"->"local".
 2. Run `./bin/build_provider`.
 3. Run `tf init`.
 4. Run `tf apply`.
 5. Create an additional town and a directory mirroing the existing structure.
 **Note:** Preceeding `/` may need to be remvoed from the img src path. E.g `/assets/` to `assets/`
+
+**Issues**
+After `tf apply`, images in terrahomes webpages would not display. Trouble isolation revealed that the `assets` directory was not uploaded to S3.
+
+**Resolution**
+Use curly braces and not parenthesis in `resource-storage.tf`, resource "aws_s3_object" "upload_assets" function, around line 40.
+```
+# Incorrect
+resource "aws_s3_object" "upload_assets" {
+  for_each = fileset("$(var.public_path)/assets","*.{jpg,png,gif}")
+```
+```
+# Correct
+resource "aws_s3_object" "upload_assets" {
+  for_each = fileset("${var.public_path}/assets","*.{jpg,png,gif}")
+```
+
+**Issues**
+During `tf plan`, being prompted for content_version even though it is set in the `variables.tf` and incremented accordingly.
+
+**Resolution**
+Ensure that there are no stand alone declarations listed in `variables.tf`. Since the content_version was refactored and nested, the stand alone declaration was no longer required and when present, cause the issue.
+
+```
+# Stand alone declaration 
+#variable "content_version" {
+#  type = number
+#}
+
+# Nested - within the home name - declaration 
+variable "fitness" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
+}
+```
+
+***
+
+**Issues**
+Build created successfully but with no activity in the TerraForm Cloud Workspace.
+
+**Resolution**
+Ensure that the provider is listed in `main.tf`. e.g.
+```
+cloud {
+    organization = "mayvik"
+    workspaces {
+      name = "Terra-House"
+    }
+  }
+```
+
+***
