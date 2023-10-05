@@ -10,23 +10,20 @@ variable "teacherseat_user_uuid" {
  type = string
 }
 
-# Comment out due to error while tf plan.
-#variable "bucket_name" {
-# type = string
+#variable "content_version" {
+#  type = number
 #}
 
-variable "index_html_filepath" {
-  type = string
+variable "fitness" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
 
-variable "error_html_filepath" {
-  type = string
-}
-
-variable "content_version" {
-  type        = number
-}
-
-variable "assets_path" {
-  type = string
+variable "bbq" {
+  type = object({
+    public_path = string
+    content_version = number
+  })
 }
