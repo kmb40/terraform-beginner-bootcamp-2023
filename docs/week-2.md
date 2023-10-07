@@ -243,3 +243,8 @@ cloud {
 ```
 
 ***
+**Issues**
+Error 422 when moving houses from one town (e.g. Missingo) to another and running `tf apply`.
+
+**Resolution** 
+Those existing houses should be deleted from the profile at https://terratowns.cloud/profile first before running `tf apply` with update "town" variable in `main.tf`

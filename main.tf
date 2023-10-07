@@ -42,7 +42,7 @@ resource "terratowns_home" "home" {
 Fitness is essential for quality, productive, long life! 
 DESCRIPTION
   domain_name = module.home_fitness_hosting.domain_name
-  town = "missingo"
+  town = "the-nomad-pad"
   content_version = var.fitness.content_version
 }
 
@@ -60,6 +60,6 @@ Smoked meats are incredible!
 DESCRIPTION
   domain_name = module.home_bbq_hosting.domain_name
   #domain_name = "3fdq3gz.cloudfront.net"
-  town = "missingo"
+  town = "cooker-cove"
   content_version = var.bbq.content_version
 }
