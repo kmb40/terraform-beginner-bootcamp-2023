@@ -37,7 +37,7 @@ module "home_fitness_hosting" {
 }
 
 resource "terratowns_home" "home" {
-  name = "How to get fit for life!!!"
+  name = "Fitness House"
   description = <<DESCRIPTION
 Fitness is essential for quality, productive, long life! 
 DESCRIPTION
@@ -54,7 +54,7 @@ module "home_bbq_hosting" {
 }
 
 resource "terratowns_home" "bbq" {
-  name = "Using a Smoker"
+  name = "BBQ House"
   description = <<DESCRIPTION
 Smoked meats are incredible! 
 DESCRIPTION
