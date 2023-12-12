@@ -193,10 +193,18 @@ j. Run `terraform apply --auto--approve`
 ### Terraform Alias  
 **Objective:** Configure Terraform alias in Gitpod to shorten commands syntax. 
 
-1. Launch Gitpod.   
+#### Mac cli
+1. Launch cli.   
 2. Enter the following `open ~/.bash_profile`.   
 3. A file named ".bash_profile /home/gitpod" should open in Gitpod. Append `alias tf="terraform"` to that file.
 4. Create a new bash script name (`/bin/set_tf_alias`)[/bin/set_tf_alias] to set the new alias on future launches. And set permissions.
 5. Update the gitpod.yml file for both terraform and aws with `source ./bin/set_tf_alias`.   
 6. Commit changes and restart the Gitpod workspace to apply.
+7. Run `tf` and the command line to test. If usage information is returned then the task is completed.
+
+#### Gitpod
+1. Launch Gitpod.   
+2. Enter the following `open ~/.bash_profile`.   
+3. A file named ".bash_profile should open. Append `alias tf="terraform"` to that file.
+4. Update the .bash_profile in real-time with `source ~/.bash_profile`.   
 7. Run `tf` and the command line to test. If usage information is returned then the task is completed.
